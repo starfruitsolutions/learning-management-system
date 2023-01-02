@@ -17,7 +17,7 @@
           v-else
           @click.stop="menuOpen = !menuOpen"
           lines="two"
-          prepend-avatar="https://randomuser.me/api/portraits/women/81.jpg"
+          :prepend-avatar="avatarSource(currentUser.id)"
           :title="currentUser.username"
           subtitle="Logged in"
         />
@@ -49,6 +49,7 @@
 
 <script lang="ts">
 import { pb, currentUser } from '@/stores/pocketbase'
+import { avatarSource } from '@/utilities/dicebear'
 
 export default {
   name: 'App',
@@ -59,6 +60,7 @@ export default {
     }
   },
   methods: {
+    avatarSource,
     logout() {
       pb.authStore.clear()
     },
