@@ -1,13 +1,11 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
 
 import App from './App.vue'
-import router from './router'
 
 // Plugins
-import { registerGlobalComponents } from '@/utilities/globalComponentLoader'
 import vuetify from '@/plugins/vuetify'
+import { createPinia } from 'pinia'
+import router from './router'
 
 const app = createApp(App)
 

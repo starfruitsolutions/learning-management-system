@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution');
+require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
@@ -15,7 +15,6 @@ module.exports = {
   rules: {
     // Override our default settings just for this directory
     semi: ['error', 'never'],
-    quotes: ['error', 'single', { avoidEscape: true }],
     'vue/multi-word-component-names': 'off',
   },
 }

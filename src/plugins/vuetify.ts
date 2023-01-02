@@ -12,7 +12,6 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import { aliases, fa } from 'vuetify/iconsets/fa'
 import { mdi } from 'vuetify/iconsets/mdi'
 
-
 // Composables
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
@@ -23,7 +22,7 @@ export default createVuetify({
   components,
   directives,
   theme: {
-    defaultTheme: 'dark'
+    defaultTheme: 'dark',
   },
   icons: {
     defaultSet: 'fa',
@@ -31,6 +30,6 @@ export default createVuetify({
     sets: {
       fa,
       mdi,
-    }
+    },
   },
 })
