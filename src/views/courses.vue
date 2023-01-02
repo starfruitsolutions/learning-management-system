@@ -4,7 +4,7 @@
       <v-card>
         <v-img
           height="200"
-          :src="url + '/api/files/courses/' + course.id + '/' + course.image"
+          :src="asset('courses', course.id, course.image)"
           cover
           class="mb-5"
         />
@@ -38,14 +38,13 @@
 </template>
 
 <script>
-import { url, pb } from '@/stores/pocketbase'
+import { pb, asset } from '@/stores/pocketbase'
 
 export default {
   data() {
     return {
       auth: false,
       courses: [],
-      url,
     }
   },
   async mounted() {
@@ -56,6 +55,9 @@ export default {
     })
     this.courses = pbQuery.items
   },
+  methods: {
+    asset,
+  }
 }
 </script>
 

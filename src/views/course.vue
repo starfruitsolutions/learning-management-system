@@ -36,13 +36,7 @@
       <ascii-cinema-player
         v-if="currentUnit.asciiCinemaFile"
         :key="currentUnit.asciiCinemaFile"
-        :src="
-          url +
-          '/api/files/units/' +
-          currentUnit.id +
-          '/' +
-          currentUnit.asciiCinemaFile
-        "
+        :src="asset('units', currentUnit.id, currentUnit.asciiCinemaFile)"
       />
       <v-card-title>{{ currentUnit.name }}</v-card-title>
       <v-card-text class="pa-15">
@@ -54,7 +48,8 @@
 </template>
 
 <script>
-import { url, pb } from '@/stores/pocketbase'
+import { pb, asset } from '@/stores/pocketbase'
+
 import youtubePlayer from '../components/youtubePlayer.vue'
 import asciiCinemaPlayer from '../components/asciiCinemaPlayer.vue'
 import markdown from '../components/markdown.vue'
@@ -68,7 +63,6 @@ export default {
   data() {
     return {
       auth: false,
-      url,
       course: {},
       units: [],
       currentUnit: {},
@@ -85,9 +79,9 @@ export default {
     this.loadUnit(0)
   },
   methods: {
+    asset,
     loadUnit(index) {
       this.currentUnit = this.units[index]
-      this.currentUnit.video = convert(this.currentUnit.video)
     },
   },
 }
