@@ -23,6 +23,13 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+PocketBase:
+
+This project uses Pocketbase, see https://pocketbase.io/docs for
+installation and more information.
+
+NodeJS:
+
 ```sh
 npm install
 ```
