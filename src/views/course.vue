@@ -1,10 +1,10 @@
 <template>
   <v-navigation-drawer
-    class="bg-deep-purple-darken-1 py-5"
-    width="300"
+    class="py-5"
+    width="350"
     permanent
   >
-    <div class="px-8">
+    <div class="px-8 my-5">
       <h1>{{ course.name }}</h1>
       <p>{{ course.description }}</p>
     </div>
@@ -13,10 +13,16 @@
         v-for="(unit, index) in units"
         :key="unit.id"
         @click="loadUnit(index)"
-        prepend-icon="fa-solid fa-person-chalkboard"
         class="px-8"
       >
-        {{ unit.name }}
+        <template v-slot:prepend>
+          <v-icon icon="fa-regular fa-square" color="green" class="mr-3"/>
+          {{ unit.name }}
+        </template>
+        <template v-slot:append>
+          <v-icon icon="fa-regular fa-clock" color="light-blue" class="mr-3"/>
+          {{ unit.time }}
+        </template>
       </v-list-item>
     </v-list>
     <template v-slot:append>
@@ -25,9 +31,8 @@
       </div>
     </template>
   </v-navigation-drawer>
-  <v-row> </v-row>
-  <v-row class="px-15">
-    <v-card width="100%" min-height="80vh">
+  <v-row class="pa-15">
+    <v-card width="90%" min-height="80vh" class="mx-auto">
       <youtube-player
         v-if="currentUnit.video"
         :name="currentUnit.name"
@@ -38,8 +43,8 @@
         :key="currentUnit.asciiCinemaFile"
         :src="asset('units', currentUnit.id, currentUnit.asciiCinemaFile)"
       />
-      <v-card-title>{{ currentUnit.name }}</v-card-title>
-      <v-card-text class="pa-15">
+      <v-card-title class="pa-15">{{ currentUnit.name }}</v-card-title>
+      <v-card-text class="px-15">
         {{ currentUnit.description }}
         <markdown :source="currentUnit.text"/>
       </v-card-text>

@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar app color="deep-purple accent-4" class="px-5" height="100">
+    <v-app-bar app color="deep-purple-darken-2" class="px-5" height="100">
       <template v-slot:prepend>
         <v-img
           height="50"
@@ -11,17 +11,19 @@
       <v-app-bar-title>
         <h2>Starfruit Academy</h2>
       </v-app-bar-title>
-      <template v-slot:append>
-        <v-btn v-if="!currentUser" :to="{ path: '/login' }"> Login </v-btn>
-        <v-list-item
-          v-else
-          @click.stop="menuOpen = !menuOpen"
-          lines="two"
-          :prepend-avatar="avatarSource(currentUser.id)"
-          :title="currentUser.username"
-          subtitle="Logged in"
-        />
-      </template>
+      <v-spacer/>
+      <v-btn variant="text">Courses</v-btn>
+      <v-btn variant="text">Pricing</v-btn>
+      <v-btn variant="text">Mentors</v-btn>
+      <v-btn v-if="!currentUser" :to="{ path: '/login' }"> Login </v-btn>
+      <v-list-item
+        v-else
+        @click.stop="menuOpen = !menuOpen"
+        lines="two"
+        :prepend-avatar="avatarSource(currentUser.id)"
+        :title="currentUser.username"
+        subtitle="Logged in"
+      />
     </v-app-bar>
 
     <v-navigation-drawer v-model="menuOpen" location="right">
