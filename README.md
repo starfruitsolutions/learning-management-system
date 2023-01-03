@@ -25,8 +25,19 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 PocketBase:
 
-This project uses Pocketbase, see https://pocketbase.io/docs for
-installation and more information.
+This project uses Pocketbase
+
+To connect to a pocketbase instance the VITE_POCKETBASE_URL environement variable must be set.
+
+You can create a .env.local file in the root of the project directory to have vite automatically set them when you run the dev server.
+
+```.env
+VITE_POCKETBASE_URL=[base url]
+```
+
+see https://pocketbase.io/docs for installation and more information.
+
+
 
 NodeJS:
 
