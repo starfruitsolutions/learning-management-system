@@ -1,5 +1,5 @@
 <template>
-    <markdown :source="source" html break/>
+    <markdown :source="src" html break/>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ import markdown from 'vue3-markdown-it'
 import 'highlight.js/styles/monokai.css'
 
 export default{
-    props:['source'],
+    props:['src'],
     components: {
         markdown
     },

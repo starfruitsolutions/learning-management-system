@@ -1,6 +1,5 @@
 <template>
     <iframe
-        :title="name"
         :src="source"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -11,7 +10,7 @@
 <script>
 
 export default{
-    props:['name', 'url'],
+    props:['url'],
     computed:{
         source(){
             const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/

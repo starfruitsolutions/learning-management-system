@@ -33,20 +33,10 @@
   </v-navigation-drawer>
   <v-row class="pa-15">
     <v-card width="90%" min-height="80vh" class="mx-auto">
-      <youtube-player
-        v-if="currentUnit.video"
-        :name="currentUnit.name"
-        :url="currentUnit.video"
-      />
-      <ascii-cinema-player
-        v-if="currentUnit.asciiCinemaFile"
-        :key="currentUnit.asciiCinemaFile"
-        :src="asset('units', currentUnit.id, currentUnit.asciiCinemaFile)"
-      />
+      <course-content :src="currentUnit.text"/>
       <v-card-title class="pa-15">{{ currentUnit.name }}</v-card-title>
       <v-card-text class="px-15">
         {{ currentUnit.description }}
-        <markdown :source="currentUnit.text"/>
       </v-card-text>
     </v-card>
   </v-row>
@@ -55,15 +45,11 @@
 <script>
 import { pb, asset } from '@/stores/pocketbase'
 
-import youtubePlayer from '../components/youtubePlayer.vue'
-import asciiCinemaPlayer from '../components/asciiCinemaPlayer.vue'
-import markdown from '../components/markdown.vue'
+import courseContent from '../components/courseContent.vue'
 
 export default {
   components: {
-    youtubePlayer,
-    asciiCinemaPlayer,
-    markdown
+    courseContent
   },
   data() {
     return {
