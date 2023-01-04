@@ -1,0 +1,109 @@
+= Starfruit Academy
+Starfruit Solutions
+:toc:
+:copyright: © 2023
+:uri-eslint: https://eslint.org/
+:uri-pocketbase-docs: https://pocketbase.io/docs
+:uri-pocketbase: https://pocketbase.io
+:uri-vitejs: https://vitejs.dev
+:uri-vitest: https://vitest.dev
+:uri-vscode: https://code.visualstudio.com
+:uri-vsmarketplace/items: https://marketplace.visualstudio.com/items?itemName=
+
+This template should help get you started developing with Vue 3 in Vite.
+
+== Recommended IDE Setup
+
+{uri-vscode}[VSCode] +
+{uri-vsmarketplace}Vue.volar[Volar] (and disable Vetur) +
+{uri-vsmarketplace}Vue.vscode-typescript-vue-plugin[TypeScript Vue Plugin (Volar)].
+
+== Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking.
+In editors, we need https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin[TypeScript Vue Plugin (Volar)] to make the TypeScript language service aware of `.vue` types.
+
+If the standalone TypeScript plugin doesn’t feel fast enough to you, Volar has also implemented a https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669[Take Over Mode] that is more performant.
+You can enable it by the following steps:
+
+* Disable the built-in TypeScript Extension
+** Run `Extensions: Show Built-in Extensions` from VSCode’s command palette
+** Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+* Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+== Customize configuration
+
+See {uri-vitejs}/config/[Vite Configuration Reference].
+
+== Project Setup
+
+=== PocketBase
+
+This project uses {uri-pocketbase}[PocketBase™].
+
+To connect to a PocketBase™ instance the `VITE_POCKETBASE_URL` environment variable must be set.
+
+You can create a `.env.local` file in the root of the project directory to have Vite automatically set them when you run the development server.
+
+[source,.env]
+----
+VITE_POCKETBASE_URL=[base url]
+----
+
+See https://pocketbase.io/docs for installation and more information.
+
+=== NodeJS
+
+[source,sh]
+----
+npm install
+----
+
+==== Compile and Hot-Reload for Development
+
+[source,sh]
+----
+npm run dev
+----
+
+==== Type-Check, Compile and Minify for Production
+
+[source,sh]
+----
+npm run build
+----
+
+==== Run Unit Tests with {uri-vitest}[Vitest]
+
+[source,sh]
+----
+npm run test:unit
+----
+
+==== Run End-to-End Tests with https://playwright.dev[Playwright]
+
+[source,sh]
+----
+# Install browsers for the first run
+npx playwright install
+
+# When testing on CI, must build the project first
+npm run build
+
+# Runs the end-to-end tests
+npm run test:e2e
+# Runs the tests only on Chromium
+npm run test:e2e -- --project=chromium
+# Runs the tests of a specific file
+npm run test:e2e -- tests/example.spec.ts
+# Runs the tests in debug mode
+npm run test:e2e -- --debug
+----
+
+==== Lint with {uri-eslint}[ESLint]
+
+[source,sh]
+----
+npm run lint
+----
+
