@@ -1,5 +1,5 @@
 <template>
-  <markdown :source="src" html break class="pa-15" />
+  <markdown :source="src" html break class="px-15" />
 </template>
 
 <script>

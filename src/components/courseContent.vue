@@ -11,6 +11,7 @@
 import youtubePlayer from '@/components/youtubePlayer.vue'
 import asciiCinemaPlayer from '@/components/asciiCinemaPlayer.vue'
 import markdown from '@/components/markdown.vue'
+import fileHeader from '@/components/fileHeader.vue'
 import codepen from '@/components/codepen.vue'
 import codeSandbox from '@/components/codeSandbox.vue'
 
@@ -22,6 +23,7 @@ export default {
     youtube: youtubePlayer,
     asciiCinema: asciiCinemaPlayer,
     markdown,
+    fileHeader,
     codepen,
     codeSandbox,
   },
@@ -63,7 +65,7 @@ export default {
   methods: {
     parseShortcode(shortcode) {
       // shortcode format: {{ component='name' prop-name='value' this='something' }}
-      let matches = shortcode.matchAll(/([\w-]+)=['"](.*?)['"]\s/gs)
+      let matches = shortcode.matchAll(/([\w-]+)=['"](.*?)['"][\s}]/gs)
 
       let props = {}
       for (const match of matches) {
