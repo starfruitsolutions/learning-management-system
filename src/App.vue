@@ -12,9 +12,9 @@
         <h2>Starfruit Academy</h2>
       </v-app-bar-title>
       <v-spacer />
-      <v-btn variant="text">Courses</v-btn>
-      <v-btn variant="text">Pricing</v-btn>
-      <v-btn variant="text">Mentors</v-btn>
+      <v-btn :to="{ path: '/courses' }" variant="text">Courses</v-btn>
+      <v-btn :to="{ path: '/pricing' }" variant="text">Pricing</v-btn>
+      <v-btn :to="{ path: '/mentors' }" variant="text">Mentors</v-btn>
       <v-btn v-if="!currentUser" :to="{ path: '/login' }"> Login </v-btn>
       <v-list-item
         v-else
