@@ -1,6 +1,10 @@
 <template>
   <v-row>
-    <v-col v-for="subscription in subscriptions" :key="subscription.name" class="ma-5">
+    <v-col
+      v-for="subscription in subscriptions"
+      :key="subscription.name"
+      class="ma-5"
+    >
       <v-card class="pa-15">
         <v-card-title>
           <h1>{{ subscription.name }}</h1>
