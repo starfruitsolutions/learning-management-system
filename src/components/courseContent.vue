@@ -11,6 +11,7 @@
 import youtubePlayer from '@/components/youtubePlayer.vue'
 import asciiCinemaPlayer from '@/components/asciiCinemaPlayer.vue'
 import markdown from '@/components/markdown.vue'
+import codepen from '@/components/codepen.vue'
 
 export default {
   props: {
@@ -20,6 +21,7 @@ export default {
     youtube: youtubePlayer,
     asciiCinema: asciiCinemaPlayer,
     markdown,
+    codepen,
   },
   data() {
     return {
