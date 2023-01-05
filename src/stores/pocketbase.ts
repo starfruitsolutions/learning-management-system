@@ -14,5 +14,5 @@ pb.authStore.onChange(() => {
 })
 
 export const asset = (collection, id, filename) => {
-    return `${config.POCKETBASE_URL}/api/files/${collection}/${id}/${filename}`
+  return `${config.POCKETBASE_URL}/api/files/${collection}/${id}/${filename}`
 }

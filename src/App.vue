@@ -11,7 +11,7 @@
       <v-app-bar-title>
         <h2>Starfruit Academy</h2>
       </v-app-bar-title>
-      <v-spacer/>
+      <v-spacer />
       <v-btn variant="text">Courses</v-btn>
       <v-btn variant="text">Pricing</v-btn>
       <v-btn variant="text">Mentors</v-btn>

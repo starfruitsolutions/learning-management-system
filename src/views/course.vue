@@ -1,9 +1,5 @@
 <template>
-  <v-navigation-drawer
-    class="py-5"
-    width="350"
-    permanent
-  >
+  <v-navigation-drawer class="py-5" width="350" permanent>
     <div class="px-8 my-5">
       <h1>{{ course.name }}</h1>
       <p>{{ course.description }}</p>
@@ -16,11 +12,11 @@
         class="px-8"
       >
         <template v-slot:prepend>
-          <v-icon icon="fa-regular fa-square" color="green" class="mr-3"/>
+          <v-icon icon="fa-regular fa-square" color="green" class="mr-3" />
           {{ unit.name }}
         </template>
         <template v-slot:append>
-          <v-icon icon="fa-regular fa-clock" color="light-blue" class="mr-3"/>
+          <v-icon icon="fa-regular fa-clock" color="light-blue" class="mr-3" />
           {{ unit.time }}
         </template>
       </v-list-item>
@@ -33,11 +29,7 @@
   </v-navigation-drawer>
   <v-row class="pa-15">
     <v-card width="90%" min-height="80vh" class="mx-auto">
-      <course-content :src="currentUnit.text"/>
-      <v-card-title class="pa-15">{{ currentUnit.name }}</v-card-title>
-      <v-card-text class="px-15">
-        {{ currentUnit.description }}
-      </v-card-text>
+      <course-content :src="currentUnit.text" />
     </v-card>
   </v-row>
 </template>
@@ -49,7 +41,7 @@ import courseContent from '../components/courseContent.vue'
 
 export default {
   components: {
-    courseContent
+    courseContent,
   },
   data() {
     return {
