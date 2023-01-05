@@ -10,6 +10,7 @@ Starfruit Solutions
 :uri-volar:  https://github.com/johnsoncodehk/volar
 :uri-vscode: https://code.visualstudio.com
 :uri-vsmarketplace/items: https://marketplace.visualstudio.com/items?itemName=
+:uri-asciinema-player: https://github.com/asciinema/asciinema-player
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -108,3 +109,8 @@ npm run test:e2e -- --debug
 npm run lint
 ----
 
+=== Components used in Project
+
+==== Asciinema Player
+
+The player used for terminal playback is {uri-asciinema-player}[asciinema-player]

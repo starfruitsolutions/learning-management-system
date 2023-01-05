@@ -10,7 +10,7 @@
 <script>
 import badComponent from '@/components/badComponent.vue'
 import youtubePlayer from '@/components/youtubePlayer.vue'
-import asciiCinemaPlayer from '@/components/asciiCinemaPlayer.vue'
+import asciinemaPlayer from '@/components/asciinemaPlayer.vue'
 import videoChat from '@/components/videoChat.vue'
 import markdown from '@/components/markdown.vue'
 import fileHeader from '@/components/fileHeader.vue'
@@ -24,7 +24,7 @@ export default {
   components: {
     badComponent,
     youtube: youtubePlayer,
-    asciiCinema: asciiCinemaPlayer,
+    asciinema: asciinemaPlayer,
     videoChat,
     markdown,
     fileHeader,
