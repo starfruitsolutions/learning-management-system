@@ -11,6 +11,7 @@
 import badComponent from '@/components/badComponent.vue'
 import youtubePlayer from '@/components/youtubePlayer.vue'
 import asciiCinemaPlayer from '@/components/asciiCinemaPlayer.vue'
+import videoChat from '@/components/videoChat.vue'
 import markdown from '@/components/markdown.vue'
 import fileHeader from '@/components/fileHeader.vue'
 import codepen from '@/components/codepen.vue'
@@ -24,6 +25,7 @@ export default {
     badComponent,
     youtube: youtubePlayer,
     asciiCinema: asciiCinemaPlayer,
+    videoChat,
     markdown,
     fileHeader,
     codepen,
