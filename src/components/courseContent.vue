@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import badComponent from '@/components/badComponent.vue'
 import youtubePlayer from '@/components/youtubePlayer.vue'
 import asciiCinemaPlayer from '@/components/asciiCinemaPlayer.vue'
 import markdown from '@/components/markdown.vue'
@@ -20,6 +21,7 @@ export default {
     src: String,
   },
   components: {
+    badComponent,
     youtube: youtubePlayer,
     asciiCinema: asciiCinemaPlayer,
     markdown,
@@ -71,6 +73,16 @@ export default {
       for (const match of matches) {
         //match[1] is prop name match[2] is value
         props[match[1]] = match[2]
+      }
+      if (
+        typeof props.component == 'undefined' ||
+        typeof this.$options.components[props.component] == 'undefined'
+      ) {
+        return {
+          key: this.generateKey(),
+          component: 'badComponent',
+          shortcode: shortcode,
+        }
       }
       return {
         key: this.generateKey(),
