@@ -12,9 +12,13 @@
         <h2>Starfruit Academy</h2>
       </v-app-bar-title>
       <v-spacer />
-      <v-btn :to="{ path: '/courses' }" variant="text">Courses</v-btn>
-      <v-btn :to="{ path: '/pricing' }" variant="text">Pricing</v-btn>
-      <v-btn :to="{ path: '/mentors' }" variant="text">Mentors</v-btn>
+      <v-btn
+        v-for="link in links"
+        :key="link.text"
+        :to="{ path: link.to }"
+        variant="text"
+        >{{ link.text }}</v-btn
+      >
       <v-btn v-if="!currentUser" :to="{ path: '/login' }"> Login </v-btn>
       <v-list-item
         v-else
@@ -59,6 +63,24 @@ export default {
     return {
       menuOpen: false,
       currentUser,
+      links: [
+        {
+          text: 'Dashboard',
+          to: '/dashboard',
+        },
+        {
+          text: 'Courses',
+          to: '/courses',
+        },
+        {
+          text: 'Pricing',
+          to: '/pricing',
+        },
+        {
+          text: 'Mentors',
+          to: '/mentors',
+        },
+      ],
     }
   },
   methods: {
