@@ -1,18 +1,14 @@
 <template>
   <v-row>
     <v-col cols="8">
-      <active-courses />
+      <h2 class="ml-2">Active Courses</h2>
+      <active-courses class="my-5" />
+      <h2 class="ml-2 mt-8">Other Courses</h2>
+      <courses class="my-5" />
     </v-col>
-    <v-col cols="4">
+    <v-col cols="4" class="mt-16">
       <notifications />
-    </v-col>
-  </v-row>
-  <v-row>
-    <v-col cols="8">
-      <courses />
-    </v-col>
-    <v-col cols="4">
-      <awards />
+      <awards class="mt-16" />
       <li>Scheduled course events</li>
       <li>links: social media, discourse, resources, etc</li>
       <li>alerts</li>
