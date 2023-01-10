@@ -1,6 +1,12 @@
 <template>
   <v-app dark>
-    <v-app-bar app color="deep-purple-darken-2" class="px-5" height="100">
+    <v-app-bar app color="deep-purple-darken-2" class="px-15" height="100">
+      <template v-slot:image>
+        <v-img
+          src="https://img.freepik.com/premium-vector/dark-purple-abstract-background-that-represents-speed-is-decorated-with-dots-lines_49459-670.jpg?w=2000"
+          gradient="to bottom right, rgba(97, 29, 191,.7), rgba(67, 9, 117,.7)"
+        />
+      </template>
       <template v-slot:prepend>
         <v-img
           height="50"
@@ -46,7 +52,7 @@
     </v-navigation-drawer>
 
     <v-main>
-      <v-container class="py-10">
+      <v-container class="py-10 px-15" fluid>
         <router-view />
       </v-container>
     </v-main>

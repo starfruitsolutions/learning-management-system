@@ -1,46 +1,28 @@
 <template>
   <v-row>
-    <v-col v-for="course in courses" :key="course.id" cols="4" class="pa-5">
-      <v-card>
-        <v-img
-          height="200"
-          :src="asset('courses', course.id, course.image)"
-          cover
-          class="mb-5"
-        />
-        <v-card-item>
-          <v-card-title>{{ course.name }}</v-card-title>
-          <v-card-subtitle>categories</v-card-subtitle>
-          <v-rating
-            :model-value="4.5"
-            color="amber"
-            density="compact"
-            half-increments
-            readonly
-            size="small"
-          />
-        </v-card-item>
-
-        <v-card-text height="600">
-          {{ course.description }}
-        </v-card-text>
-
-        <v-card-actions>
-          <v-btn color="orange"> Share </v-btn>
-
-          <v-btn :to="{ path: '/course/' + course.id }" color="orange">
-            Explore
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+    <v-col v-for="course in courses" :key="course.id" cols="6" class="pa-5">
+      <course-card
+        :id="course.id"
+        :name="course.name"
+        :categories="course.categories"
+        :image="course.image"
+        currentUnit=""
+        progress="60"
+        :description="course.description"
+        link-text="Enroll"
+      />
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { pb, asset } from '@/stores/pocketbase'
+import { pb } from '@/stores/pocketbase'
+import courseCard from '@/components/cards/course.vue'
 
 export default {
+  components: {
+    courseCard,
+  },
   data() {
     return {
       auth: false,
@@ -54,9 +36,6 @@ export default {
       //expand: units // join relational data
     })
     this.courses = pbQuery.items
-  },
-  methods: {
-    asset,
   },
 }
 </script>
