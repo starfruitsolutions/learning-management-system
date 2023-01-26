@@ -1,13 +1,13 @@
 <template>
   <v-app dark>
     <v-app-bar app color="deep-purple-darken-2" class="px-15" height="100">
-      <template v-slot:image>
+      <template #image>
         <v-img
           src="https://img.freepik.com/premium-vector/dark-purple-abstract-background-that-represents-speed-is-decorated-with-dots-lines_49459-670.jpg?w=2000"
           gradient="to bottom right, rgba(97, 29, 191,.7), rgba(67, 9, 117,.7)"
         />
       </template>
-      <template v-slot:prepend>
+      <template #prepend>
         <v-img
           height="50"
           width="50"
@@ -28,11 +28,11 @@
       <v-btn v-if="!currentUser" :to="{ path: '/login' }"> Login </v-btn>
       <v-list-item
         v-else
-        @click.stop="menuOpen = !menuOpen"
         lines="two"
         :prepend-avatar="avatarSource(currentUser.id)"
         :title="currentUser.username"
         subtitle="Logged in"
+        @click.stop="menuOpen = !menuOpen"
       />
     </v-app-bar>
 
@@ -44,9 +44,9 @@
           title="Subscription"
         />
         <v-list-item
-          @click="logout"
           prepend-icon="fa-solid fa-right-from-bracket"
           title="Log Out"
+          @click="logout"
         />
       </v-list>
     </v-navigation-drawer>

@@ -8,20 +8,20 @@
       <v-list-item
         v-for="(unit, index) in units"
         :key="unit.id"
-        @click="loadUnit(index)"
         class="px-8"
+        @click="loadUnit(index)"
       >
-        <template v-slot:prepend>
+        <template #prepend>
           <v-icon icon="fa-regular fa-square" color="green" class="mr-3" />
           {{ unit.name }}
         </template>
-        <template v-slot:append>
+        <template #append>
           <v-icon icon="fa-regular fa-clock" color="light-blue" class="mr-3" />
           {{ unit.time }}
         </template>
       </v-list-item>
     </v-list>
-    <template v-slot:append>
+    <template #append>
       <div class="pa-2">
         <v-btn :to="{ path: '/courses/' }" block> Back to courses </v-btn>
       </div>

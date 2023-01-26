@@ -3,7 +3,7 @@
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 lg4>
         <Card>
-          <template v-slot:header>Sign Up</template>
+          <template #header>Sign Up</template>
           <v-container>
             <v-form ref="form" v-model="valid" @submit.prevent="submit">
               <v-text-field

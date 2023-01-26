@@ -16,10 +16,10 @@
           :title="item.title"
           :prepend-avatar="avatarSource(item.id, avatarType)"
         >
-          <template v-slot:subtitle>
+          <template #subtitle>
             <div>{{ item.subtitle }}</div>
           </template>
-          <template v-slot:append>
+          <template #append>
             <v-btn
               color="deep-purple"
               icon="fa-solid fa-eye"

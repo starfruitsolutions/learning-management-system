@@ -5,7 +5,7 @@
         :id="course.expand.course.id"
         :name="course.expand.course.name"
         :image="course.expand.course.image"
-        currentUnit=""
+        current-unit=""
         progress="60"
         :description="course.expand.course.description"
         :categories="course.expand.course.categories"

@@ -6,7 +6,7 @@
         :name="course.name"
         :categories="course.categories"
         :image="course.image"
-        currentUnit=""
+        current-unit=""
         progress="60"
         :description="course.description"
         link-text="Enroll"

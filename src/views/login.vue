@@ -3,7 +3,7 @@
     <v-row justify="center" align="center">
       <v-col cols="6">
         <v-card class="pa-10">
-          <template v-slot:header>Login</template>
+          <template #header>Login</template>
           <v-container>
             <v-alert v-if="error" type="error" class="mb-5">
               {{ error }}
@@ -24,7 +24,7 @@
                 autocomplete="current-password"
                 prepend-icon="fas fa-unlock-alt"
               />
-              <v-btn @click="submit" :disabled="!valid" block> Login </v-btn>
+              <v-btn :disabled="!valid" block @click="submit"> Login </v-btn>
             </v-form>
           </v-container>
         </v-card>

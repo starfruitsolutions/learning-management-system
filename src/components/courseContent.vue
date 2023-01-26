@@ -1,7 +1,7 @@
 <template>
   <component
-    v-for="element in elements"
     :is="element.component"
+    v-for="element in elements"
     :key="element.key"
     v-bind="element"
   ></component>
@@ -18,9 +18,6 @@ import codepen from '@/components/codepen.vue'
 import codeSandbox from '@/components/codeSandbox.vue'
 
 export default {
-  props: {
-    src: String,
-  },
   components: {
     badComponent,
     youtube: youtubePlayer,
@@ -30,6 +27,9 @@ export default {
     fileHeader,
     codepen,
     codeSandbox,
+  },
+  props: {
+    src: String,
   },
   data() {
     return {
