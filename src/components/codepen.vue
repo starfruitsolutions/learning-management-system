@@ -22,7 +22,12 @@
 
 <script>
 export default {
-  props: ['hash'],
+  props: {
+    hash: {
+      type: String,
+      default: '',
+    },
+  },
   mounted() {
     let codepen = document.createElement('script')
     codepen.setAttribute(

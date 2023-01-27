@@ -4,7 +4,12 @@
 
 <script>
 export default {
-  props: ['shortcode'],
+  props: {
+    shortcode: {
+      type: String,
+      default: '[ empty ]',
+    },
+  },
 }
 </script>
 

@@ -10,7 +10,12 @@
 
 <script>
 export default {
-  props: ['filename'],
+  props: {
+    filename: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 

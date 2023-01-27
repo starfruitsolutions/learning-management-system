@@ -39,7 +39,28 @@
 import { avatarSource } from '@/utilities/dicebear'
 
 export default {
-  props: ['header', 'items', 'moreUrl', 'avatarType', 'linkPrefix'],
+  props: {
+    header: {
+      type: String,
+      default: '',
+    },
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    moreUrl: {
+      type: String,
+      default: '',
+    },
+    avatarType: {
+      type: String,
+      default: '',
+    },
+    linkPrefix: {
+      type: String,
+      default: '',
+    },
+  },
   methods: {
     avatarSource,
   },

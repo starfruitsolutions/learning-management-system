@@ -9,7 +9,12 @@
 
 <script>
 export default {
-  props: ['url'],
+  props: {
+    url: {
+      type: String,
+      default: 'youtube.com',
+    },
+  },
   computed: {
     source() {
       const regExp =

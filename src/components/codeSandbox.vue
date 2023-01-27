@@ -7,7 +7,12 @@
 
 <script>
 export default {
-  props: ['src'],
+  props: {
+    src: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 

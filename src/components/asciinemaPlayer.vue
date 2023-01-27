@@ -5,7 +5,12 @@
 <script>
 import * as AsciinemaPlayer from 'asciinema-player'
 export default {
-  props: ['src'],
+  props: {
+    src: {
+      type: String,
+      default: 'asciinema-default',
+    },
+  },
   mounted() {
     AsciinemaPlayer.create(this.src, document.getElementById(this.src))
   },

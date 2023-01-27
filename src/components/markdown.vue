@@ -14,7 +14,12 @@ export default {
   components: {
     markdown,
   },
-  props: ['src'],
+  props: {
+    src: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 

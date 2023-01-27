@@ -29,7 +29,10 @@ export default {
     codeSandbox,
   },
   props: {
-    src: String,
+    src: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {

@@ -41,16 +41,40 @@
 import { asset } from '@/stores/pocketbase'
 
 export default {
-  props: [
-    'id',
-    'name',
-    'categories',
-    'image',
-    'currentUnit',
-    'progress',
-    'description',
-    'linkText',
-  ],
+  props: {
+    id: {
+      type: String,
+      default: 'none',
+    },
+    name: {
+      type: String,
+      default: 'Course',
+    },
+    categories: {
+      type: Array,
+      default: () => ['category'],
+    },
+    image: {
+      type: String,
+      default: '',
+    },
+    currentUnit: {
+      type: String,
+      default: '',
+    },
+    progress: {
+      type: String,
+      default: '0',
+    },
+    description: {
+      type: String,
+      default: 'Course description...',
+    },
+    linkText: {
+      type: String,
+      default: '',
+    },
+  },
   methods: {
     asset,
   },
