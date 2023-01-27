@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col v-for="course in courses" :key="course.id" cols="6" class="pa-5">
+    <v-col v-for="course in courseStore.courses" :key="course.id" cols="6" class="pa-5">
       <course-card
         :id="course.id"
         :name="course.name"
@@ -16,26 +16,19 @@
 </template>
 
 <script>
-import { pb } from '@/stores/pocketbase'
+import { mapStores } from 'pinia'
+import { useCourseStore } from '@/stores/course'
 import courseCard from '@/components/cards/course.vue'
 
 export default {
   components: {
     courseCard,
   },
-  data() {
-    return {
-      auth: false,
-      courses: [],
-    }
-  },
   async mounted() {
-    const pbQuery = await pb.collection('courses').getList(1, 50, {
-      //start on page 1 and show 50
-      sort: 'name',
-      //expand: units // join relational data
-    })
-    this.courses = pbQuery.items
+    await this.courseStore.getCourses()
+  },
+  computed: {
+    ...mapStores(useCourseStore)
   },
 }
 </script>
