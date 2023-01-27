@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import badComponent from '@/components/badComponent.vue'
-import youtubePlayer from '@/components/youtubePlayer.vue'
-import asciinemaPlayer from '@/components/asciinemaPlayer.vue'
-import videoChat from '@/components/videoChat.vue'
-import markdown from '@/components/markdown.vue'
-import fileHeader from '@/components/fileHeader.vue'
-import codepen from '@/components/codepen.vue'
-import codeSandbox from '@/components/codeSandbox.vue'
+import badComponent from './shortcodes/badComponent.vue'
+import youtubePlayer from './shortcodes/youtubePlayer.vue'
+import asciinemaPlayer from './shortcodes/asciinemaPlayer.vue'
+import videoChat from './shortcodes/videoChat.vue'
+import markdown from './shortcodes/markdown.vue'
+import fileHeader from './shortcodes/fileHeader.vue'
+import codepen from './shortcodes/codepen.vue'
+import codeSandbox from './shortcodes/codeSandbox.vue'
 
 export default {
   components: {

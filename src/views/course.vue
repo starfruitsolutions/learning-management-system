@@ -37,7 +37,7 @@
 <script>
 import { pb, asset } from '@/stores/pocketbase'
 
-import courseContent from '../components/courseContent.vue'
+import courseContent from '@/components/course/content.vue'
 
 export default {
   components: {
