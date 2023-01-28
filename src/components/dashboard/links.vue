@@ -3,19 +3,25 @@
     <template #text>
       <v-row justify="space-between" >    
         <v-btn
+          :href="config.FACEBOOK_URL"
+          target="_blank"
           icon="fa-brands fa-facebook-f"
           size="large"
           color="deep-purple"
         />
         <v-btn
-            icon="fa-brands fa-twitter"
-            size="large"
-            color="deep-purple"
+          :href="config.TWITTER_URL"
+          target="_blank"
+          icon="fa-brands fa-twitter"
+          size="large"
+          color="deep-purple"
         />
         <v-btn
-            icon="fa-brands fa-discord"
-            size="large"
-            color="deep-purple"
+          :href="config.DISCORD_URL"
+          target="_blank"
+          icon="fa-brands fa-discord"
+          size="large"
+          color="deep-purple"
         />
       </v-row>    
     </template>
@@ -23,11 +29,13 @@
 </template>
 
 <script>
-import listCard from '@/components/cards/list.vue'
+import config from '@/config'
 
 export default {
-  components: {
-    listCard,
+  data() {
+    return {
+      config,
+    }
   },
 }
 </script>
