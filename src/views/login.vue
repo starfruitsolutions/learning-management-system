@@ -34,7 +34,8 @@
 </template>
 
 <script>
-import { pb } from '@/stores/pocketbase'
+import { mapStores } from 'pinia'
+import { useUserStore } from '@/stores/user'
 import validationRules from '@/mixins/validationRules'
 // our new component
 export default {
@@ -50,12 +51,13 @@ export default {
       },
     }
   },
+  computed: {
+    ...mapStores(useUserStore),
+  },
   methods: {
     async submit() {
       try {
-        await pb
-          .collection('users')
-          .authWithPassword(this.form.email, this.form.password)
+        await this.userStore.login(this.form.email, this.form.password)
         this.$router.push('courses')
       } catch (error) {
         this.error = error

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { pb, currentUser } from './pocketbase.ts'
+import { pb } from './pocketbase.ts'
 
 export const useCourseStore = defineStore('course', {
   state: () => ({
@@ -23,7 +23,7 @@ export const useCourseStore = defineStore('course', {
     },
     async getActiveCourses() {
       const { items } = await pb.collection('courseProgress').getList(1, 10, {
-        filter: `user = "${currentUser.value.id}"`,
+        filter: `user = "${pb.authStore.model.id}"`, //user id
         sort: '-created',
         expand: 'course',
       })

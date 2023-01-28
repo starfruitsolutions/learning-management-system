@@ -25,12 +25,12 @@
         variant="text"
         >{{ link.text }}</v-btn
       >
-      <v-btn v-if="!currentUser" :to="{ path: '/login' }"> Login </v-btn>
+      <v-btn v-if="!userStore.user" :to="{ path: '/login' }"> Login </v-btn>
       <v-list-item
         v-else
         lines="two"
-        :prepend-avatar="avatarSource(currentUser.id)"
-        :title="currentUser.username"
+        :prepend-avatar="avatarSource(userStore.user.id)"
+        :title="userStore.user.username"
         subtitle="Logged in"
         @click.stop="menuOpen = !menuOpen"
       />
@@ -46,7 +46,7 @@
         <v-list-item
           prepend-icon="fa-solid fa-right-from-bracket"
           title="Log Out"
-          @click="logout"
+          @click="userStore.logout"
         />
       </v-list>
     </v-navigation-drawer>
@@ -60,7 +60,8 @@
 </template>
 
 <script lang="ts">
-import { pb, currentUser } from '@/stores/pocketbase'
+import { mapStores } from 'pinia'
+import { useUserStore } from '@/stores/user'
 import { avatarSource } from '@/utilities/dicebear'
 
 export default {
@@ -68,7 +69,6 @@ export default {
   data() {
     return {
       menuOpen: false,
-      currentUser,
       links: [
         {
           text: 'Dashboard',
@@ -89,11 +89,11 @@ export default {
       ],
     }
   },
+  computed: {
+    ...mapStores(useUserStore),
+  },
   methods: {
     avatarSource,
-    logout() {
-      pb.authStore.clear()
-    },
   },
 }
 </script>
