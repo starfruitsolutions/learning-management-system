@@ -53,7 +53,7 @@
 
     <v-main>
       <v-container class="py-10 px-15" fluid>
-        <router-view />
+        <router-view :key="$route.path"/>
       </v-container>
     </v-main>
   </v-app>
@@ -70,6 +70,10 @@ export default {
     return {
       menuOpen: false,
       links: [
+        {
+          text: 'Blog',
+          to: '/blog',
+        },
         {
           text: 'Dashboard',
           to: '/dashboard',
