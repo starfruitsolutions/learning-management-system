@@ -25,7 +25,7 @@ export const useUserStore = defineStore('user', () => {
       title: 'Birthday gift',
       subtitle:
         'Have any ideas about what we should get Heidi for her birthday?',
-    }
+    },
   ])
   const awards = ref([
     {
@@ -47,7 +47,7 @@ export const useUserStore = defineStore('user', () => {
       id: 4,
       title: 'Completion Badge',
       subtitle: 'Text subtitle of award',
-    }
+    },
   ])
 
   pb.authStore.onChange(() => {
@@ -71,6 +71,6 @@ export const useUserStore = defineStore('user', () => {
     notifications,
     awards,
     login,
-    logout
+    logout,
   }
 })

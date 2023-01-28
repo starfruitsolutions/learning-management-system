@@ -1,11 +1,6 @@
 <template>
   <v-row>
-    <v-col
-      v-for="blog in blogStore.blogs"
-      :key="blog.id"
-      cols="6"
-      class="pa-5"
-    >
+    <v-col v-for="blog in blogStore.blogs" :key="blog.id" cols="6" class="pa-5">
       <blog-card
         :id="blog.id"
         :title="blog.title"

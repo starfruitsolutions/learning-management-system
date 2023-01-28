@@ -4,7 +4,8 @@ import { pb } from './pocketbase'
 export const useBlogStore = defineStore('blog', {
   state: () => ({
     blogs: [],
-    blog: {}
+    blog: {},
+    newestBlog: {},
   }),
   actions: {
     async getBlogs() {
@@ -16,6 +17,12 @@ export const useBlogStore = defineStore('blog', {
     async getBlog(id) {
       const blog = await pb.collection('blogs').getOne(id)
       this.blog = blog
-    }
+    },
+    async getNewestBlog() {
+      const blog = await pb
+        .collection('blogs')
+        .getFirstListItem('', { sort: '-created' })
+      this.newestBlog = blog
+    },
   },
 })

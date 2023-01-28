@@ -1,7 +1,7 @@
 <template>
   <v-card width="100%" class="pa-7">
     <template #text>
-      <v-row justify="space-between" >    
+      <v-row justify="space-between">
         <v-btn
           :href="config.FACEBOOK_URL"
           target="_blank"
@@ -23,9 +23,9 @@
           size="large"
           color="deep-purple"
         />
-      </v-row>    
+      </v-row>
     </template>
-  </v-card>  
+  </v-card>
 </template>
 
 <script>

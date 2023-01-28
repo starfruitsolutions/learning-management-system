@@ -53,7 +53,7 @@
 
     <v-main>
       <v-container class="py-10 px-15" fluid>
-        <router-view :key="$route.path"/>
+        <router-view :key="$route.path" />
       </v-container>
     </v-main>
   </v-app>
