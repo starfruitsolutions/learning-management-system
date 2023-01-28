@@ -1,12 +1,12 @@
 <template>
   <v-navigation-drawer class="py-5" width="350" permanent>
     <div class="px-8 my-5">
-      <h1>{{ course.name }}</h1>
-      <p>{{ course.description }}</p>
+      <h1>{{ courseStore.course.name }}</h1>
+      <p>{{ courseStore.course.description }}</p>
     </div>
     <v-list>
       <v-list-item
-        v-for="(unit, index) in units"
+        v-for="(unit, index) in courseStore.courseUnits"
         :key="unit.id"
         class="px-8"
         @click="loadUnit(index)"
@@ -35,8 +35,9 @@
 </template>
 
 <script>
-import { pb, asset } from '@/stores/pocketbase'
-
+import { asset } from '@/stores/pocketbase'
+import { mapStores } from 'pinia'
+import { useCourseStore } from '@/stores/course'
 import courseContent from '@/components/course/content.vue'
 
 export default {
@@ -45,26 +46,21 @@ export default {
   },
   data() {
     return {
-      auth: false,
-      course: {},
-      units: [],
       currentUnit: {},
     }
   },
+  computed: {
+    ...mapStores(useCourseStore),
+  },
   async mounted() {
-    const course = await pb.collection('courses').getOne(this.$route.params.id)
-    const units = await pb.collection('units').getList(1, 50, {
-      filter: `course = "${this.$route.params.id}"`,
-      sort: 'order',
-    })
-    this.course = course
-    this.units = units.items
+    await this.courseStore.getCourse(this.$route.params.id)
+    await this.courseStore.getCourseUnits(this.$route.params.id)
     this.loadUnit(0)
   },
   methods: {
     asset,
     loadUnit(index) {
-      this.currentUnit = this.units[index]
+      this.currentUnit = this.courseStore.courseUnits[index]
     },
   },
 }

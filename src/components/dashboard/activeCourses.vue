@@ -1,6 +1,11 @@
 <template>
   <v-row>
-    <v-col v-for="course in courses" :key="course.id" cols="6" class="pa-5">
+    <v-col
+      v-for="course in courseStore.activeCourses"
+      :key="course.id"
+      cols="6"
+      class="pa-5"
+    >
       <course-card
         :id="course.expand.course.id"
         :name="course.expand.course.name"
@@ -16,26 +21,19 @@
 </template>
 
 <script>
-import { pb, currentUser } from '@/stores/pocketbase'
+import { mapStores } from 'pinia'
+import { useCourseStore } from '@/stores/course'
 import courseCard from '@/components/cards/course.vue'
 
 export default {
   components: {
     courseCard,
   },
-  data() {
-    return {
-      currentUser,
-      courses: [],
-    }
+  computed: {
+    ...mapStores(useCourseStore),
   },
   async mounted() {
-    const courses = await pb.collection('courseProgress').getList(1, 10, {
-      filter: `user = "${this.currentUser.id}"`,
-      sort: '-created',
-      expand: 'course',
-    })
-    this.courses = courses.items
+    await this.courseStore.getActiveCourses()
   },
 }
 </script>

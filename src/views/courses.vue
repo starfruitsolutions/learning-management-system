@@ -1,6 +1,11 @@
 <template>
   <v-row>
-    <v-col v-for="course in courseStore.courses" :key="course.id" cols="6" class="pa-5">
+    <v-col
+      v-for="course in courseStore.courses"
+      :key="course.id"
+      cols="6"
+      class="pa-5"
+    >
       <course-card
         :id="course.id"
         :name="course.name"
@@ -24,11 +29,11 @@ export default {
   components: {
     courseCard,
   },
+  computed: {
+    ...mapStores(useCourseStore),
+  },
   async mounted() {
     await this.courseStore.getCourses()
-  },
-  computed: {
-    ...mapStores(useCourseStore)
   },
 }
 </script>
