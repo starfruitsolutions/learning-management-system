@@ -6,13 +6,21 @@
       <h2 class="ml-2 mt-8">Other Courses</h2>
       <courses class="my-5" />
     </v-col>
-    <v-col cols="4" class="mt-16">
-      <notifications />
-      <awards class="mt-16" />
-      <li>Scheduled course events</li>
-      <li>links: social media, discourse, resources, etc</li>
-      <li>alerts</li>
-      <li>course listing</li>
+    <v-col cols="4" class="mt-3">
+      <v-row class="mt-16" >
+        <notifications/>
+      </v-row>
+      <v-row class="mt-16" >
+        <awards/>
+      </v-row>
+      <v-row class="mt-16">
+        <links/>
+      </v-row>
+      <v-row>
+        <li>Scheduled course events, notifications, alerts separate?</li>
+        <li>subscription?</li>
+        <li>recent news/blog?</li>
+      </v-row>
     </v-col>
   </v-row>
   <ul></ul>
@@ -22,13 +30,15 @@
 import activeCourses from '@/components/dashboard/activeCourses.vue'
 import awards from '@/components/dashboard/awards.vue'
 import notifications from '@/components/dashboard/notifications.vue'
+import links from '@/components/dashboard/links.vue'
 import courses from '@/views/courses.vue'
 
 export default {
   components: {
     activeCourses,
-    awards,
     notifications,
+    awards,
+    links,
     courses,
   },
   data() {
