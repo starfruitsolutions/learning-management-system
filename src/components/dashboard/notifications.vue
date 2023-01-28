@@ -1,7 +1,7 @@
 <template>
   <list-card
     header="Notifications"
-    :items="items"
+    :items="userStore.notifications"
     more-url=""
     avatar-type="bottts"
     link-prefix=""
@@ -9,37 +9,17 @@
 </template>
 
 <script>
+import { mapStores } from 'pinia'
+import { useUserStore } from '@/stores/user'
 import listCard from '@/components/cards/list.vue'
 
 export default {
   components: {
     listCard,
   },
-  data: () => ({
-    items: [
-      {
-        id: 1,
-        title: 'Brunch this weekend?',
-        subtitle: `I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-      },
-      {
-        id: 2,
-        title: 'Summer BBQ',
-        subtitle: `Wish I could come, but I'm out of town this weekend.`,
-      },
-      {
-        id: 3,
-        title: 'Oui oui',
-        subtitle: 'Do you have Paris recommendations? Have you ever been?',
-      },
-      {
-        id: 4,
-        title: 'Birthday gift',
-        subtitle:
-          'Have any ideas about what we should get Heidi for her birthday?',
-      },
-    ],
-  }),
+  computed: {
+    ...mapStores(useUserStore),
+  },
 }
 </script>
 
