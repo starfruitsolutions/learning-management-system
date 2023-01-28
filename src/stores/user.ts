@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { pb } from './pocketbase.ts'
+import { pb } from './pocketbase'
 import { ref } from 'vue'
 
 export const useUserStore = defineStore('user', () => {
