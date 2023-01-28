@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card width="100%">
     <v-img
       height="50"
       src="https://img.freepik.com/premium-vector/dark-purple-abstract-background-that-represents-speed-is-decorated-with-dots-lines_49459-670.jpg?w=2000"
