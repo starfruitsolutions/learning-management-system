@@ -62,7 +62,7 @@ export default {
             src: element,
           })
         }
-        if (this.shortcodes[index]) {
+        if (this.shortcodes && this.shortcodes[index]) {
           elements.push(this.parseShortcode(this.shortcodes[index]))
         }
       })
