@@ -1,6 +1,6 @@
 <template>
   <list-card
-    header="Awards & Certifications"
+    header="Notifications"
     :items="items"
     more-url=""
     avatar-type="bottts"
