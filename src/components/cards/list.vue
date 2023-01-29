@@ -1,35 +1,42 @@
 <template>
-  <header-card :header="header">
-    <v-list lines="two">
-      <v-list-item
-        v-for="item in items"
-        :key="item.id"
-        :title="item.title"
-        :prepend-avatar="avatarSource(item.id, avatarType)"
-      >
-        <template #subtitle>
-          <div>{{ item.subtitle }}</div>
-        </template>
-        <template #append>
-          <v-btn
-            color="deep-purple"
-            icon="fa-solid fa-eye"
-            size="x-small"
-          ></v-btn>
-        </template>
-      </v-list-item>
-    </v-list>
-    <v-btn block>See More</v-btn>
-  </header-card>
+  <v-card width="100%">
+    <text-header>
+      {{ header }}
+    </text-header>
+    <v-card-item>
+      <v-list lines="two">
+        <v-list-item
+          v-for="item in items"
+          :key="item.id"
+          :title="item.title"
+          :prepend-avatar="avatarSource(item.id, avatarType)"
+        >
+          <template #subtitle>
+            <div>{{ item.subtitle }}</div>
+          </template>
+          <template #append>
+            <v-btn
+              color="deep-purple"
+              icon="fa-solid fa-eye"
+              size="x-small"
+            ></v-btn>
+          </template>
+        </v-list-item>
+      </v-list>
+    </v-card-item>
+    <v-card-actions>
+      <v-btn block>See More</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
-import headerCard from './header.vue'
+import textHeader from './textHeader.vue'
 import { avatarSource } from '@/utilities/dicebear'
 
 export default {
   components: {
-    headerCard,
+    textHeader,
   },
   props: {
     header: {

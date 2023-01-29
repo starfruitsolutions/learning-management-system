@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { asset } from '@/stores/pocketbase'
 import { mapStores } from 'pinia'
 import { useBlogStore } from '@/stores/blog'
 import blogCard from '@/components/cards/blog.vue'
@@ -30,9 +29,6 @@ export default {
   },
   async mounted() {
     await this.blogStore.getNewestBlog()
-  },
-  methods: {
-    asset,
   },
 }
 </script>

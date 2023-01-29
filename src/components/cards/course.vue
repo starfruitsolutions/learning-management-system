@@ -1,13 +1,6 @@
 <template>
   <v-card class="fill-height">
-    <v-img
-      height="220"
-      :src="asset('courses', id, image)"
-      gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,0), rgba(53, 11, 92, 1)"
-      cover
-      class="align-end"
-    >
-    </v-img>
+    <image-header :src="asset('courses', id, image)" />
     <v-card-item height="600">
       <v-progress-linear
         :model-value="progress"
@@ -38,9 +31,13 @@
 </template>
 
 <script>
+import imageHeader from './imageHeader.vue'
 import { asset } from '@/stores/pocketbase'
 
 export default {
+  components: {
+    imageHeader,
+  },
   props: {
     id: {
       type: String,

@@ -1,40 +1,38 @@
 <template>
-  <header-card header="Social Links">
-    <v-container>
-      <v-row justify="space-between" class="px-2">
+  <v-card width="100%">
+    <text-Header> Social Links </text-Header>
+    <v-card-text class="pa-9">
+      <v-row justify="space-between">
         <v-btn
           :href="config.FACEBOOK_URL"
           target="_blank"
           icon="fa-brands fa-facebook-f"
-          size="large"
           color="deep-purple"
         />
         <v-btn
           :href="config.TWITTER_URL"
           target="_blank"
           icon="fa-brands fa-twitter"
-          size="large"
           color="deep-purple"
         />
         <v-btn
           :href="config.DISCORD_URL"
           target="_blank"
           icon="fa-brands fa-discord"
-          size="large"
           color="deep-purple"
         />
       </v-row>
-    </v-container>
-  </header-card>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
-import headerCard from '@/components/cards/header.vue'
+import textHeader from '@/components/cards/textHeader.vue'
 import config from '@/config'
 
 export default {
   components: {
-    headerCard,
+    textHeader,
   },
   data() {
     return {
