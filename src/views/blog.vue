@@ -14,17 +14,15 @@
   </v-navigation-drawer>
   <v-row class="pa-15">
     <v-card width="90%" min-height="80vh" class="mx-auto">
-      <v-img
-        :src="image"
-        gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,0), rgba(53, 11, 92, 1)"
-        height="400"
-        cover
-        class="align-end px-15"
-      >
-        <h1>{{ blogStore.blog.title }}</h1>
-        <p>{{ blogStore.blog.created }}</p>
-      </v-img>
-      <blog-content :src="blogStore.blog.content" />
+      <image-header :src="image" height="400">
+        <div class="px-15">
+          <h1>{{ blogStore.blog.title }}</h1>
+          <p>{{ blogStore.blog.created }}</p>
+        </div>
+      </image-header>
+      <div class="py-10">
+        <rendered-content :src="blogStore.blog.content" />
+      </div>
     </v-card>
   </v-row>
 </template>
@@ -34,12 +32,14 @@ import { asset } from '@/stores/pocketbase'
 import { mapStores } from 'pinia'
 import { useBlogStore } from '@/stores/blog'
 import blogCard from '@/components/cards/blog.vue'
-import blogContent from '@/components/course/content.vue'
+import imageHeader from '@/components/cards/imageHeader.vue'
+import renderedContent from '@/components/content/content.vue'
 
 export default {
   components: {
     blogCard,
-    blogContent,
+    imageHeader,
+    renderedContent,
   },
   data() {
     return {

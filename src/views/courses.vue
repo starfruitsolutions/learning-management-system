@@ -4,7 +4,7 @@
       v-for="course in courseStore.courses"
       :key="course.id"
       cols="6"
-      class="pa-5"
+      class="py-5"
     >
       <course-card
         :id="course.id"

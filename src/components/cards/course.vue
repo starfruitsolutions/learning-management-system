@@ -1,7 +1,9 @@
 <template>
-  <v-card class="fill-height">
-    <image-header :src="asset('courses', id, image)" />
-    <v-card-item height="600">
+  <v-card :to="{ path: '/course/' + id }" class="fill-height">
+    <image-header :src="asset('courses', id, image)">
+      <h2 class="px-5">{{ name }}</h2>
+    </image-header>
+    <v-card-item height="600" class="px-5">
       <v-progress-linear
         :model-value="progress"
         color="light-blue"
@@ -9,7 +11,6 @@
         striped
         class="my-5"
       />
-      <v-card-title class="text-h5">{{ name }}</v-card-title>
       <v-chip
         v-for="category in categories"
         :key="category"

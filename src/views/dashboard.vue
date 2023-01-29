@@ -1,17 +1,25 @@
 <template>
   <v-row>
-    <v-col cols="8">
-      <h2 class="ml-2">Active Courses</h2>
-      <active-courses class="my-5" />
-      <h2 class="ml-2 mt-8">Other Courses</h2>
-      <courses class="my-5" />
+    <v-col cols="8" class="pr-15">
+      <v-row>
+        <h2>Active Courses</h2>
+      </v-row>
+      <v-row>
+        <active-courses />
+      </v-row>
+      <v-row>
+        <h2 class="mt-8">Other Courses</h2>
+      </v-row>
+      <v-row>
+        <courses />
+      </v-row>
     </v-col>
-    <v-col cols="4" class="mt-3">
-      <v-row class="mt-16">
-        <blog />
+    <v-col cols="4">
+      <v-row class="mt-7">
+        <notifications />
       </v-row>
       <v-row class="mt-16">
-        <notifications />
+        <blog />
       </v-row>
       <v-row class="mt-16">
         <awards />

@@ -1,8 +1,9 @@
 <template>
   <v-card width="100%" class="fill-height" :to="{ path: '/blog/' + id }">
-    <image-header :src="asset('blogs', id, image)" />
-    <v-card-item height="600" class="pa-8">
-      <v-card-title class="text-h5">{{ title }}</v-card-title>
+    <image-header :src="asset('blogs', id, image)">
+      <h2 class="px-5">{{ title }}</h2>
+    </image-header>
+    <v-card-item height="600" class="pa-5">
       <v-chip
         v-for="category in categories"
         :key="category"

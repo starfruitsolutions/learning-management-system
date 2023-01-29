@@ -29,7 +29,7 @@
   </v-navigation-drawer>
   <v-row class="pa-15">
     <v-card width="90%" min-height="80vh" class="mx-auto">
-      <course-content :src="currentUnit.text" />
+      <rendered-content :src="currentUnit.text" />
     </v-card>
   </v-row>
 </template>
@@ -38,11 +38,11 @@
 import { asset } from '@/stores/pocketbase'
 import { mapStores } from 'pinia'
 import { useCourseStore } from '@/stores/course'
-import courseContent from '@/components/course/content.vue'
+import renderedContent from '@/components/content/content.vue'
 
 export default {
   components: {
-    courseContent,
+    renderedContent,
   },
   data() {
     return {
