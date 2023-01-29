@@ -1,7 +1,7 @@
 <template>
-  <v-card width="100%" class="pa-7">
-    <template #text>
-      <v-row justify="space-between">
+  <header-card header="Social Links">
+    <v-container>
+      <v-row justify="space-between" class="px-2">
         <v-btn
           :href="config.FACEBOOK_URL"
           target="_blank"
@@ -24,14 +24,18 @@
           color="deep-purple"
         />
       </v-row>
-    </template>
-  </v-card>
+    </v-container>
+  </header-card>
 </template>
 
 <script>
+import headerCard from '@/components/cards/header.vue'
 import config from '@/config'
 
 export default {
+  components: {
+    headerCard,
+  },
   data() {
     return {
       config,
